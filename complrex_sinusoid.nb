@@ -1,0 +1,229 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9230,        221]
+NotebookOptionsPosition[      8751,        204]
+NotebookOutlinePosition[      9146,        220]
+CellTagsIndexPosition[      9103,        217]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"z", " ", "=", 
+      RowBox[{"r", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", "\[Phi]"}]]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"g1", " ", "=", " ", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Circle", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "r"}], "]"}], ",",
+           "\[IndentingNewLine]", "Dashed", ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Re", "[", "z", "]"}], ",", " ", 
+               RowBox[{"Im", "[", "z", "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Dashing", "[", "None", "]"}], ",", "\[IndentingNewLine]", 
+          "Red", ",", "\[IndentingNewLine]", 
+          RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Point", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Re", "[", "z", "]"}], ",", " ", 
+             RowBox[{"Im", "[", "z", "]"}]}], "}"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", " ", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", " ", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", " ", "2"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", " ", "2"}], "}"}]}], "}"}]}], ",", " ", 
+        
+        RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"p1", " ", "=", " ", 
+      RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Im", "[", "z", "]"}], " ", 
+          RowBox[{"Sin", "[", 
+           RowBox[{"2", " ", "freq", " ", "\[Pi]", "  ", "x"}], "]"}]}], " ", 
+         "+", " ", 
+         RowBox[{
+          RowBox[{"Re", "[", "z", "]"}], " ", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"2", " ", "freq", " ", "\[Pi]", "   ", "x"}], "]"}]}]}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", " ", 
+          RowBox[{"-", "2"}], ",", " ", "2"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"Opacity", "[", "0.5", "]"}]}]}], "\[IndentingNewLine]", 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{"g1", ",", " ", "p1"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\[Phi]", ",", " ", 
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[Pi]"}], ",", " ", 
+      RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\[Phi]", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", 
+        FractionBox["\[Pi]", "2"], ",", " ", "\[Pi]", ",", " ", 
+        FractionBox[
+         RowBox[{"3", "\[Pi]"}], "2"], ",", " ", 
+        RowBox[{"2", "\[Pi]"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{"{", 
+     RowBox[{"freq", ",", " ", "1", ",", " ", "5"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", " ", "0.5", ",", " ", "2"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0.5", ",", " ", "1", ",", " ", "1.5", ",", " ", "2"}], 
+       "}"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.850481275084569*^9, 3.850481386667861*^9}, {
+  3.8504814967599916`*^9, 3.850481497252384*^9}, {3.850481564201118*^9, 
+  3.8504816914656687`*^9}, {3.850481740473125*^9, 3.8504818446139593`*^9}, {
+  3.85048207743959*^9, 3.850482077785775*^9}, {3.850482118099289*^9, 
+  3.85048211968534*^9}, {3.850482566285184*^9, 3.850482743318286*^9}, {
+  3.850482886739489*^9, 3.850483057151626*^9}, {3.850483101355234*^9, 
+  3.85048310315409*^9}, {3.850483174042841*^9, 3.850483245598969*^9}, {
+  3.8504832764089603`*^9, 3.850483285730006*^9}, {3.850507658003079*^9, 
+  3.85050768222406*^9}, {3.8507920802358847`*^9, 3.8507920901733637`*^9}, {
+  3.851508761619524*^9, 3.851508798080227*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"62da25d1-4c7e-49fa-8e06-26423d28f971"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`freq$$ = 1., $CellContext`r$$ = 
+    0.5, $CellContext`\[Phi]$$ = 0.9299114254625795, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Phi]$$], (-2) Pi, 2 Pi}, {
+      Hold[$CellContext`\[Phi]$$], {
+      0, Rational[1, 2] Pi, Pi, Rational[3, 2] Pi, 2 Pi}}, {
+      Hold[$CellContext`freq$$], 1, 5}, {
+      Hold[$CellContext`r$$], 0.5, 2}, {
+      Hold[$CellContext`r$$], {0.5, 1, 1.5, 2}}}, Typeset`size$$ = {
+    450., {224., 230.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`freq$$ = 1, $CellContext`r$$ = 
+        0.5, $CellContext`\[Phi]$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`z = $CellContext`r$$ 
+         E^(I $CellContext`\[Phi]$$); $CellContext`g1 = Graphics[{
+           Circle[{0, 0}, $CellContext`r$$], Dashed, 
+           Line[{{0, 0}, {
+              Re[$CellContext`z], 
+              Im[$CellContext`z]}}], 
+           Dashing[None], Red, 
+           PointSize[Large], 
+           Point[{
+             Re[$CellContext`z], 
+             Im[$CellContext`z]}]}, PlotRange -> {{-2, 2}, {-2, 2}}, Axes -> 
+          True]; $CellContext`p1 = 
+        Plot[Im[$CellContext`z] Sin[2 $CellContext`freq$$ Pi $CellContext`x] + 
+          Re[$CellContext`z] 
+           Cos[2 $CellContext`freq$$ Pi $CellContext`x], {$CellContext`x, -2, 
+           2}, PlotStyle -> Opacity[0.5]]; 
+       Show[$CellContext`g1, $CellContext`p1]), 
+      "Specifications" :> {{$CellContext`\[Phi]$$, (-2) Pi, 2 
+         Pi}, {$CellContext`\[Phi]$$, {
+         0, Rational[1, 2] Pi, Pi, Rational[3, 2] Pi, 2 
+          Pi}}, {$CellContext`freq$$, 1, 5}, {$CellContext`r$$, 0.5, 
+         2}, {$CellContext`r$$, {0.5, 1, 1.5, 2}}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{504., {351., 359.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.850481323548934*^9, 3.850481347185416*^9}, 
+   3.850481386996251*^9, 3.8504814454244957`*^9, 3.850481486290825*^9, 
+   3.85048152365331*^9, {3.850481579384869*^9, 3.850481845655191*^9}, 
+   3.8504820842000227`*^9, {3.850482570833721*^9, 3.850482643513791*^9}, {
+   3.850482702378318*^9, 3.850482743778946*^9}, {3.850482894578738*^9, 
+   3.850482994240712*^9}, 3.8504830574882803`*^9, 3.8504831036158533`*^9, 
+   3.850483144372655*^9, {3.850483190494574*^9, 3.850483245920917*^9}, {
+   3.850507669180154*^9, 3.85050768940486*^9}, {3.850792058467209*^9, 
+   3.850792090623371*^9}, {3.8515087492625017`*^9, 3.851508799220851*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"081bd168-7758-4c7f-a192-4f61242aa607"]
+}, Open  ]]
+},
+WindowSize->{1003, 997},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4b40078a-7ed0-4461-8d93-6ab4598c3942"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4639, 109, 702, "Input",ExpressionUUID->"62da25d1-4c7e-49fa-8e06-26423d28f971"],
+Cell[5222, 133, 3513, 68, 733, "Output",ExpressionUUID->"081bd168-7758-4c7f-a192-4f61242aa607"]
+}, Open  ]]
+}
+]
+*)
+
