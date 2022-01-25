@@ -1,0 +1,275 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10999,        267]
+NotebookOptionsPosition[     10425,        249]
+NotebookOutlinePosition[     10820,        265]
+CellTagsIndexPosition[     10777,        262]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"dst", "[", 
+     RowBox[{"dc_", ",", "p_", ",", "x_"}], "]"}], " ", "=", " ", 
+    RowBox[{"Which", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"0", "<", 
+       RowBox[{"Abs", "[", "x", "]"}], "<", " ", 
+       FractionBox["1", "dc"]}], ",", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"dc", "-", "1"}], ")"}], "*", "x"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       FractionBox["1", "dc"], "<", 
+       RowBox[{"Abs", "[", "x", "]"}], "<", 
+       FractionBox["2", "dc"]}], ",", " ", 
+      RowBox[{
+       FractionBox["x", 
+        RowBox[{"Abs", "[", "x", "]"}]], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"2", " ", "-", " ", 
+             RowBox[{"dc", " ", 
+              RowBox[{"Abs", "[", "x", "]"}]}]}], ")"}], 
+           RowBox[{"(", 
+            RowBox[{"dc", "-", "1", " ", "+", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "dc"}], "+", "2"}], ")"}], "*", "p"}]}], ")"}]], 
+          "dc"]}], ")"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       FractionBox["2", "dc"], "<", 
+       RowBox[{"Abs", "[", "x", "]"}]}], ",", " ", 
+      FractionBox["x", 
+       RowBox[{"Abs", "[", "x", "]"}]]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.852121644691737*^9, 3.852121715363576*^9}, {
+   3.8521217858640003`*^9, 3.852121826937911*^9}, 3.8521225243323927`*^9, {
+   3.852122733077683*^9, 3.8521227409735737`*^9}, {3.8521227723667593`*^9, 
+   3.852122818848885*^9}, {3.8521228500332947`*^9, 3.852122862247645*^9}, {
+   3.852123340666123*^9, 3.8521233434532948`*^9}, {3.852124326292329*^9, 
+   3.852124334792656*^9}},ExpressionUUID->"79c9d58a-e7c0-49c3-8916-\
+992917b57430"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sig", " ", "=", " ", 
+     RowBox[{"amp", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "\[Pi]", " ", "x"}], "]"}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"p1", " ", "=", " ", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", 
+         RowBox[{"-", "1"}], ",", " ", "1"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", 
+          RowBox[{"Opacity", "[", "0.3", "]"}]}], "}"}]}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"p2", " ", "=", " ", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"dst", "[", 
+        RowBox[{"distortion", ",", " ", "knee", ",", " ", "x"}], "]"}], ",", 
+       " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", 
+         RowBox[{"-", "1"}], ",", " ", "1"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"p3", " ", "=", " ", 
+     RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Clip", "[", 
+        RowBox[{"postGain", " ", "*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "mix"}], ")"}], "*", "sig"}], " ", "+", " ", 
+           RowBox[{"mix", " ", "*", "thre", "*", 
+            RowBox[{"dst", "[", 
+             RowBox[{"distortion", ",", " ", "knee", ",", " ", 
+              RowBox[{
+               FractionBox["1", "thre"], "sig"}]}], "]"}]}]}], ")"}]}], "]"}],
+        ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", 
+         RowBox[{"-", "1"}], ",", " ", "1"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", " ", 
+          RowBox[{"Opacity", "[", "0.4", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Show", "[", 
+     RowBox[{"{", 
+      RowBox[{"p1", ",", " ", "p2", ",", " ", "p3"}], "}"}], "]"}]}], ",", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", " ", 
+      RowBox[{"distortion", ",", "3", ",", " ", "\"\<Distortion\>\""}], "}"}],
+      ",", "2", ",", " ", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"knee", ",", " ", "0.5", ",", " ", "\"\<Knee\>\""}], "}"}], ",",
+      " ", "0", ",", " ", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"amp", ",", " ", "1", ",", " ", "\"\<Amp\>\""}], "}"}], ",", 
+     " ", "0.1", ",", " ", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mix", ",", " ", "1", ",", " ", "\"\<Mix\>\""}], "}"}], ",", 
+     " ", "0", ",", " ", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"thre", ",", " ", "1", ",", " ", "\"\<Threshold\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"postGain", ",", " ", "1", ",", " ", "\"\<Make Up\>\""}], "}"}],
+      ",", " ", "1", ",", " ", "5"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8521215608989267`*^9, 3.8521215769353743`*^9}, 
+   3.8521216210238037`*^9, {3.8521216891382732`*^9, 3.852121784211981*^9}, {
+   3.852121846581626*^9, 3.852121847563291*^9}, {3.852121898426317*^9, 
+   3.8521218992891407`*^9}, {3.8521219415563927`*^9, 3.852122056829796*^9}, {
+   3.852122097977812*^9, 3.852122267885014*^9}, {3.852122337498301*^9, 
+   3.852122510272662*^9}, {3.852122574795271*^9, 3.852122711952173*^9}, {
+   3.8521227462087593`*^9, 3.852122746714384*^9}, {3.8521227769756813`*^9, 
+   3.852122826960925*^9}, {3.852122901163015*^9, 3.852122983421052*^9}, {
+   3.852123013484432*^9, 3.852123020360895*^9}, {3.8521230847210627`*^9, 
+   3.852123104175232*^9}, {3.852123141992437*^9, 3.8521231797009897`*^9}, {
+   3.852123222611433*^9, 3.852123268565672*^9}, {3.852123310057963*^9, 
+   3.852123351599196*^9}, {3.8521240146207857`*^9, 3.852124088137786*^9}, {
+   3.852124121521964*^9, 3.852124127735055*^9}, {3.852124161391066*^9, 
+   3.85212429718583*^9}, {3.8521243386872253`*^9, 3.852124340728204*^9}, {
+   3.852124375993877*^9, 3.852124379820178*^9}},
+ CellLabel->
+  "In[149]:=",ExpressionUUID->"5442fdb5-5210-412c-8333-421b410737d0"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`amp$$ = 1, $CellContext`distortion$$ = 
+    3, $CellContext`knee$$ = 0.5, $CellContext`mix$$ = 
+    1, $CellContext`postGain$$ = 1, $CellContext`thre$$ = 1, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`distortion$$], 3, "Distortion"}, 2, 10}, {{
+       Hold[$CellContext`knee$$], 0.5, "Knee"}, 0, 1}, {{
+       Hold[$CellContext`amp$$], 1, "Amp"}, 0.1, 1}, {{
+       Hold[$CellContext`mix$$], 1, "Mix"}, 0, 1}, {{
+       Hold[$CellContext`thre$$], 1, "Threshold"}, 0, 1}, {{
+       Hold[$CellContext`postGain$$], 1, "Make Up"}, 1, 5}}, 
+    Typeset`size$$ = {450., {135., 142.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`amp$$ = 1, $CellContext`distortion$$ = 
+        3, $CellContext`knee$$ = 0.5, $CellContext`mix$$ = 
+        1, $CellContext`postGain$$ = 1, $CellContext`thre$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sig = $CellContext`amp$$ 
+         Cos[2 Pi $CellContext`x]; $CellContext`p1 = 
+        Plot[$CellContext`x, {$CellContext`x, -1, 1}, PlotStyle -> {Orange, 
+            Opacity[0.3]}]; $CellContext`p2 = Plot[
+          $CellContext`dst[$CellContext`distortion$$, $CellContext`knee$$, \
+$CellContext`x], {$CellContext`x, -1, 1}]; $CellContext`p3 = Plot[
+          
+          Clip[$CellContext`postGain$$ ((
+              1 - $CellContext`mix$$) $CellContext`sig + $CellContext`mix$$ \
+$CellContext`thre$$ $CellContext`dst[$CellContext`distortion$$, \
+$CellContext`knee$$, (
+                1/$CellContext`thre$$) $CellContext`sig])], {$CellContext`x, \
+-1, 1}, PlotStyle -> {Red, 
+            Opacity[0.4]}]; 
+       Show[{$CellContext`p1, $CellContext`p2, $CellContext`p3}]), 
+      "Specifications" :> {{{$CellContext`distortion$$, 3, "Distortion"}, 2, 
+         10}, {{$CellContext`knee$$, 0.5, "Knee"}, 0, 
+         1}, {{$CellContext`amp$$, 1, "Amp"}, 0.1, 
+         1}, {{$CellContext`mix$$, 1, "Mix"}, 0, 
+         1}, {{$CellContext`thre$$, 1, "Threshold"}, 0, 
+         1}, {{$CellContext`postGain$$, 1, "Make Up"}, 1, 5}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{504., {278., 286.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.852124265711348*^9, 3.852124297667192*^9, 
+  3.852124341147654*^9, 3.85212438012297*^9},
+ CellLabel->
+  "Out[149]=",ExpressionUUID->"2e6507b2-03ca-467d-91ec-2eba9eca426d"]
+}, Open  ]]
+},
+WindowSize->{1003, 997},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3fc087f9-2037-4591-bfa4-587d712bdc7d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1915, 49, 272, "Input",ExpressionUUID->"79c9d58a-e7c0-49c3-8916-992917b57430"],
+Cell[CellGroupData[{
+Cell[2498, 73, 4587, 107, 565, "Input",ExpressionUUID->"5442fdb5-5210-412c-8333-421b410737d0"],
+Cell[7088, 182, 3321, 64, 601, "Output",ExpressionUUID->"2e6507b2-03ca-467d-91ec-2eba9eca426d"]
+}, Open  ]]
+}
+]
+*)
+
